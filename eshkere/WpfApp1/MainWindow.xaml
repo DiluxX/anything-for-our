@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <DockPanel>
+        <!-- Меню -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Изменить цвет фона" Click="ChangeBack_Click" ToolTip="Изменить цвет фона окна"/>
+                <MenuItem Header="Информация о разработчике" Click="OBOMNE_Click" ToolTip="Получить информацию о разработчике"/>
+                <MenuItem Header="Выход" Click="Exit_Click" ToolTip="Закрыть приложение"/>
+            </MenuItem>
+            <MenuItem Header="ink">
+                <MenuItem Header="изм цвет" Click="ChangeInkColor_Click"/>
+                <MenuItem Header="изм размер" Click="ChangeInkSize_Click"/>
+                <MenuItem Header="ластик" Click="UseEraser_Click"/>
+            </MenuItem>
+        </Menu>
+
+       
+        <ToolBar DockPanel.Dock="Top">
+            <Button Content="Цвет фона" Click="ChangeBack_Click" ToolTip="Изменить цвет фона окна"/>
+            <Button Content="Инфо" Click="OBOMNE_Click" ToolTip="Получить информацию о разработчике"/>
+            <Button Content="Выход" Click="Exit_Click" ToolTip="Закрыть приложение"/>
+        </ToolBar>
+
+       
+        <InkCanvas x:Name="inkCanvas" Background="White" Height="366" Width="361" />
+
+      
+        <StatusBar DockPanel.Dock="Bottom" Height="354" Width="376">
+            <TextBlock x:Name="StatusText" />
+            <Image x:Name="DeveloperImage" Width="100" Height="100" Margin="5" Visibility="Collapsed"/>
+        </StatusBar>
+    </DockPanel>
+</Window>
